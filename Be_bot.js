@@ -6,6 +6,8 @@ socket.on("talk", (data) => {
     parseCommand(data.text);
 });
 
+// Black santa claus, 🎅🏿
+
 function parseCommand(input) {
     const patterns = [
         { regex: /^\(\)\{"(.+?)"\};/, action: (x) => Dialog.alert(x) },
